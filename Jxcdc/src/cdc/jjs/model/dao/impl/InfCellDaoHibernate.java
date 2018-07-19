@@ -137,21 +137,21 @@ public class InfCellDaoHibernate extends BaseDaoHibernate<InfCell> implements In
 	
 	public List<InfReportFieldVO> separationReport(Date collectionDate){
 		String hql = "select new cdc.jjs.control.inf.vo.InfReportFieldVO( "
-				+ " n.InfCell.laboratoryNumber, "
-				+ " n.InfCell.name, "
-				+ " n.InfCell.sex, "
-				+ " n.InfCell.age, "
+				+ " n.infData.laboratoryNumber, "
+				+ " n.infData.name, "
+				+ " n.infData.sex, "
+				+ " n.infData.age, "
 				+ " '委托检测', "
 				+ " '流感分离', "
-				+ " n.identificationResult, "
-				+ " n.InfCell.collectionDate, "
-				+ " n.inoculationDate, "
-				+ " n.identificationDate, "
-				+ " year(n.InfCell.collectionDate), "
-				+ " week(n.InfCell.collectionDate,3)) "
+				+ " n.infResult.identificationResult, "
+				+ " n.infData.collectionDate, "
+				+ " n.infResult.inoculationDate, "
+				+ " n.infResult.identificationDate, "
+				+ " year(n.infData.collectionDate), "
+				+ " week(n.infData.collectionDate,3)) "
 				+ " from InfCell n  "
-				+ " where n.InfCell.collectionDate = ?0 and n.separationCompany='江西省疾病预防控制中心' "
-				+ " order by n.InfCell.laboratoryNumber ";
+				+ " where n.infData.collectionDate = ?0 and n.infResult.separationCompany='江西省疾病预防控制中心' "
+				+ " order by n.infData.laboratoryNumber ";
 		
 		Query<InfReportFieldVO> query = getSessionFactory().getCurrentSession().createQuery(hql,InfReportFieldVO.class)
 				.setParameter("0", collectionDate);

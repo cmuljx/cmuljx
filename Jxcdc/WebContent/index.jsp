@@ -1,1 +1,1 @@
-<jsp:forward page="/WEB-INF/content/Rabise/rabiseMain.jsp"/>
+<jsp:forward page="/WEB-INF/content/Inf/infMain.jsp"/>

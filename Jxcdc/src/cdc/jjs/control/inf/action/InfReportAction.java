@@ -203,7 +203,7 @@ public class InfReportAction extends ActionSupport {
 			paremeter.put("reportDate", reportDate);
 			paremeter.put("detector", detector);
 			
-			if(size<12) {
+			if(size<15) {
 				InfReportFieldVO infReportFieldVO = new InfReportFieldVO();
 				infReportFieldVO.setSpecimenNumber("以下空白");
 				field.add(infReportFieldVO);
@@ -211,9 +211,9 @@ public class InfReportAction extends ActionSupport {
 					infReportFieldVO = new InfReportFieldVO();
 					field.add(infReportFieldVO);
 				}
-				return "separation12";
-			}else if(size == 12){
-				return "separation12";
+				return "separation15";
+			}else if(size == 15){
+				return "separation15";
 			}else if(size < 26) {
 				InfReportFieldVO infReportFieldVO = new InfReportFieldVO();
 				infReportFieldVO.setSpecimenNumber("以下空白");

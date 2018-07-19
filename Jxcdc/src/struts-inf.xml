@@ -49,8 +49,8 @@
 				<param name="dataSource">field</param>
 				<param name="reportParameters">paremeter</param>
 			</result>
-			<result type="jasper" name="separation12">
-				<param name="location">/source/jasperreports/infSeparationReport12.jasper</param>
+			<result type="jasper" name="separation15">
+				<param name="location">/source/jasperreports/infSeparationReport15.jasper</param>
 				<param name="format">PDF</param>
 				<param name="dataSource">field</param>
 				<param name="reportParameters">paremeter</param>

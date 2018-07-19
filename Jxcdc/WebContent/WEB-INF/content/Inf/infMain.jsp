@@ -25,6 +25,9 @@
 		$("#inf2").click(function(){
 			$("#infFrame").attr("src","inf/infDataNameUpdate.action");		
 		});
+		$("#inf3").click(function(){
+			$("#infFrame").attr("src","inf/infSeparationReport.action");		
+		});
 		$("#inf4").click(function(){
 			$("#infFrame").attr("src","inf/infNucleinReport.action");		
 		});

@@ -21,7 +21,7 @@
 		
 		$( "#collectionDate" ).datepicker({changeMonth:true,changeYear:true,dateFormat:'yy-mm-dd'});	
 		
-		$("#rabiseReportForm").validate({
+		$("#infNucleinReportForm").validate({
 			rules: {
 				collectionDate: {
 					required:true,
@@ -84,7 +84,7 @@
 			</table>
 			<table>
 				<caption class="caption">
-					狂犬病病例报告信息确认
+					流感核酸检测报告信息确认
 				</caption>
 				<tr>
 					<td class="td1">送检单位： </td>
