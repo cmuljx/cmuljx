@@ -174,8 +174,11 @@
 			var row = $("#rabiseQueryTable tr").index($(this).closest("tr"));
 			var checkNum = $("#rabiseQueryTable").find("tr").eq(row).find("td").eq(0).text();
 			$("#checkNum").val(checkNum);
-			$("#rabiseQueryForm").attr("action","rabise/rabiseDeleteAction");
-			$("#rabiseQueryForm").submit();
+			var msg = "是否确认删编号"+checkNum+"的病例资料？";
+			if(confirm(msg)==true){
+				$("#rabiseQueryForm").attr("action","rabise/rabiseDeleteAction");
+				$("#rabiseQueryForm").submit();
+			}
 		});
 		
 	});
