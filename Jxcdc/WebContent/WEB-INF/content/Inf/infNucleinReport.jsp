@@ -30,7 +30,17 @@
 			}
 		});
 		
-		
+		$("#collectionDate").change(function(){			
+			$.post("inf/infReportAction!collectionDateFind",$("#infNucleinReportForm").serializeArray(),function(response){			
+				if(response == false){
+					$("#massageTD").text("无核酸检测信息。请重新输入收样日期");
+					$("#submit").attr("disabled","disabled");
+				}else{
+					$("#massageTD").text("");
+					$("#submit").removeAttr("disabled");					
+				}		
+			});
+		});	
 		
 		
 		
@@ -59,7 +69,7 @@
 						<input id="collectionDate" type="text" name="collectionDate" style="width: 160px;" placeholder="格式：2018KQ01" autocomplete="off"/>
 					</td>
 					<td class="td3" style="text-align: left;">
-						<input id="submit" type="submit" style="width: 80px;" value="生成报告"/>
+						<input id="submit" type="submit" style="width: 80px;" value="生成报告" disabled/>
 					</td>
 					<td  class="td4"></td>
 				</tr>

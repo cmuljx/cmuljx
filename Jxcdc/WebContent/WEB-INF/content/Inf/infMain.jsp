@@ -49,6 +49,12 @@
 		<div id="top">
 			<img src="/Jxcdc/source/images/logo_01.png">
 		</div>
+		<div id="mid">
+			<div id="welcomeMid">欢迎您使用</div>
+			<div id="returnMid">
+				<a id="returnA" href="welcomeAction">返回</a>	
+			</div>					
+		</div>
 		<div id="bottom">
 			<div id="left">
 				<div id="list">

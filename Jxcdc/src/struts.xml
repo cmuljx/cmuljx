@@ -61,15 +61,19 @@
 	<package name="jjs" extends="default">
 		<!-- 定义处理登录系统的的Action -->
 		<action name="loginAction" class="cdc.jjs.control.action.LoginAction">
-			<!-- 配置拦截器 -->
-			<interceptor-ref name="defaultStack"/>
 			<!-- 配置结果视图映射 -->
 			<result name="success">/WEB-INF/content/welcome.jsp</result>
 			<result name="input">/WEB-INF/content/login.jsp</result>
 			<result name="regist">/WEB-INF/content/login.jsp</result>
 			<!-- 配置允许处理方法 -->
 			<allowed-methods>regist</allowed-methods>
-		</action>		
+		</action>
+		
+		<action name="welcomeAction">
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/welcome.jsp</result>
+		</action>
+				
 		
 		<action name="*">
 			<result>/WEB-INF/content/{1}.jsp</result>

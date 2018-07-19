@@ -65,7 +65,7 @@
 				
 			</result>
 			<result type="json" name="success">
-				
+				<param name="root">returnFlag</param>
 			</result>
 			<allowed-methods>collectionDateFind</allowed-methods>
 		</action>

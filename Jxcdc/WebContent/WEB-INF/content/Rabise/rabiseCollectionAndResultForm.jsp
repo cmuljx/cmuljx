@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>狂犬病样本结果录入</title>
+<title>狂犬病收样及结果登记表</title>
 <link href="/Jxcdc/source/CSS/jqueryui.css" rel="stylesheet" type="text/css" />
 <link href="/Jxcdc/source/CSS/formCSS.css" rel="stylesheet" type="text/css"/>
 

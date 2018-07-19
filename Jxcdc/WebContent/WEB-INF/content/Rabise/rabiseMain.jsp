@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Insert title here</title>
+<title>狂犬病系统</title>
 
 <link href="/Jxcdc/source/CSS/jqueryui.css" rel="stylesheet" type="text/css" />
 <link href="/Jxcdc/source/CSS/mainformCSS.css" rel="stylesheet" type="text/css" />
@@ -48,6 +48,12 @@
 <div id="main">
 	<div id="top">
 		<img src="/Jxcdc/source/images/logo_01.png">
+	</div>
+	<div id="mid">
+		<div id="welcomeMid">欢迎您使用</div>
+		<div id="returnMid">
+			<a id="returnA" href="welcomeAction">返回</a>	
+		</div>					
 	</div>
 	<div id="bottom">
 		<div id="left">

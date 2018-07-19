@@ -1,12 +1,15 @@
 @charset "UTF-8";
 html{
 	height: 100%;
+	width: 100%;
 }
 body{
 	height: 100%;
+	width: 100%;
 }
 #main{
 	height: 100%;
+	width: 100%;
 }
 #top{
 	height: 91px;
@@ -17,15 +20,33 @@ body{
 	height: 90%;	
 	margin-top: 10px;
 }
+
+#mid{
+	height: 25px;
+	width:100%;
+	line-height: 25px;
+}
+
+#welcomeMid{
+	height: 25px;
+	width: 90%;
+	float: left;
+}
+
+#returnMid{
+	
+}
+
+
 #left {
 	float: left;
-       width: 200px;
-       height: 100%;
-       background-color: white;
+    width: 200px;
+    height: 100%;
+    background-color: white;
      }
 #right {
-       margin-left: 210px;
-       height: 100%;
+    margin-left: 210px;
+    height: 100%;
      }
 #content{
 	background-color: rgb(228,238,248);
