@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- 狂犬病数据库 -->
+<struts>
+	<package name="rabise" extends="default" namespace="/rabise">
+
+		<!-- 狂犬病病例资料输入的Action -->
+		<action name="rabiseDataAction"
+			class="cdc.jjs.control.rabise.action.RabiseDataAction">
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/Rabise/rabiseData.jsp</result>
+		</action>
+
+		<!-- 狂犬病样本检测结果输入的Action -->
+		<action name="rabiseResultAction"
+			class="cdc.jjs.control.rabise.action.RabiseResultAction">
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/Rabise/rabiseResult.jsp</result>
+		</action>
+
+		<!-- 生成狂犬病报告的Action -->
+		<action name="rabiseReportAction"
+			class="cdc.jjs.control.rabise.action.RabiseReportAction">
+			<!-- 配置结果视图映射 -->
+			<result type="jasper" name="success">
+				<param name="location">/source/jasperreports/rabiseReport.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">list</param>
+				<param name="reportParameters">map</param>
+			</result>
+		</action>
+
+		<!-- 狂犬病资料查询的Action -->
+		<action name="rabiseQueryAction"
+			class="cdc.jjs.control.rabise.action.RabiseQueryAction">
+			<!-- 配置结果视图映射 -->
+			<result type="json" name="success">
+				<param name="includePropreties">rabiseQueryLists。*</param>
+			</result>
+		</action>
+
+		<!-- 狂犬病样本信息查看的Action -->
+		<action name="rabiseCheckAction"
+			class="cdc.jjs.control.rabise.action.RabiseCheckAction">
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/Rabise/rabiseCheck.jsp</result>
+		</action>
+
+		<!-- 狂犬病样本信息修改的Action -->
+		<action name="rabiseModifyAction"
+			class="cdc.jjs.control.rabise.action.RabiseCheckAction"
+			method="modify">
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/Rabise/rabiseCheck.jsp</result>
+			<allowed-methods>modify</allowed-methods>
+		</action>
+
+		<!-- 狂犬病样本删除的Action -->
+		<action name="rabiseDeleteAction"
+			class="cdc.jjs.control.rabise.action.RabiseCheckAction"
+			method="delete">
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/Rabise/rabiseQuery.jsp</result>
+			<allowed-methods>delete</allowed-methods>
+		</action>
+
+		<!-- 狂犬病样本编辑的Action -->
+		<action name="rabiseSaveAction"
+			class="cdc.jjs.control.rabise.action.RabiseModifyAction">
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/Rabise/rabiseQuery.jsp</result>
+		</action>
+
+		<!-- 狂犬病样本查询返回的Action -->
+		<action name="rabiseQueryReturnAction"
+			class="cdc.jjs.control.rabise.action.RabiseQueryReturnAction">
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/Rabise/rabiseQuery.jsp</result>
+		</action>
+
+		<!-- 判断是否存在某病例编号的Action -->
+		<action name="rabiseResultLocations"
+			class="cdc.jjs.control.rabise.action.RabiseResultLocationAction">
+			<!-- 配置结果视图映射 -->
+			<result type="json" name="success">
+				<param name="includePropreties">rabiseResults。*</param>
+			</result>
+		</action>
+
+		<action name="rabiseDataToExcel"
+			class="cdc.jjs.control.rabise.action.RabiseDataToExcel">
+			<result type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">1024</param>
+				<param name="inputName">excelFile</param>
+			</result>
+		</action>
+
+
+		<action name="*">
+			<result>/WEB-INF/content/Rabise/{1}.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

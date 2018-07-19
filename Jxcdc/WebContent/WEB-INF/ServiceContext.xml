@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- 配置Hibernate的局部事务管理器，使用HibernateTransactionManager类 并注入SessionFactory的引用 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory" />
+
+	<!-- 配置事务增强处理Bean,指定事务管理器 -->
+	<tx:advice id="txAdvice"
+		transaction-manager="transactionManager">
+		<!-- 用于配置详细的事务语义 -->
+		<tx:attributes>
+			<!-- 所有以'get'开头的方法是read-only的 -->
+			<tx:method name="get*" read-only="true" />
+			<!-- 其他方法使用默认的事务设置 -->
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- AOP配置 -->
+	<aop:config>
+		<!-- 配置一个切入点 -->
+		<aop:pointcut id="myPointcut"
+			expression="bean(userService)||bean(rabiseService)||bean(infService)||bean(infAnalysisService)" />
+		<!-- 指定在leePointcut切入点应用txAdvice事务增强处理 -->
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="myPointcut" />
+	</aop:config>
+
+	<!-- 定义业务逻辑组件 -->
+	<bean id="userService"
+		class="cdc.jjs.model.service.impl.UserServiceImpl"
+		p:userDao-ref="userDao" />
+	<bean id="rabiseService"
+		class="cdc.jjs.model.service.impl.RabiseServiceImpl"
+		p:rabiseDataDao-ref="rabiseDataDao"
+		p:rabiseResultDao-ref="rabiseResultDao" />
+	<bean id="infService"
+		class="cdc.jjs.model.service.impl.InfServiceImpl"  
+		p:infCellDao-ref="infCellDao" 
+		p:infDataDao-ref="infDataDao" 
+		p:infEggDao-ref="infEggDao" 
+		p:infNucleinDao-ref="infNucleinDao"  
+		p:infSeparationDao-ref="infSeparationDao"/>		
+	<bean id="infAnalysisService"
+		class="cdc.jjs.model.service.impl.InfAnalysisServiceImpl"  
+		p:infCellDao-ref="infCellDao" 
+		p:infDataDao-ref="infDataDao" 
+		p:infEggDao-ref="infEggDao" 
+		p:infNucleinDao-ref="infNucleinDao"  
+		p:infSeparationDao-ref="infSeparationDao"/>
+	
+</beans>

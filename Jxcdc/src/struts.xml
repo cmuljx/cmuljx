@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<!-- Struts2配置文件的根元素 -->
+<struts>
+	<!-- 配置了系列常量 -->
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.custom.i18n.resources" value="messageResource"/>
+	<constant name="struts.multipart.maxSize" value="52428800"/>
+	
+	<!-- 加载struts。xml文件 -->
+	<include file="struts-rabise.xml"/>
+	<include file="struts-inf.xml"/>
+	
+	<package name="default" extends="struts-default" abstract="true">
+		<!-- 定义结果类型 -->
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+			<result-type name="jasper" class="org.apache.struts2.views.jasperreports.JasperReportsResult"/>
+		</result-types>
+		
+		<!-- 定义拦截器 -->
+		<interceptors>
+			<!-- 定义登录状态检查拦截器 -->
+			<!-- <interceptor name="loginState" class="cdc.jjs.control.interceptor.LoginInterceptor" /> -->
+			<interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+
+			<!-- 定义默认的拦截器栈 -->
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="defaultStack" />
+				<!-- <interceptor-ref name="loginState"/> -->
+				<interceptor-ref name="json"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 配置默认拦截器 -->
+		<default-interceptor-ref name="loginStack"/>
+		
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<!-- 定义sql、root两个异常对应的视图页 -->
+			<result name="business">/WEB-INF/content/error.jsp</result>
+			<result name="root">/WEB-INF/content/error.jsp</result>
+			<!-- 定义login逻辑视图对应的视图资源 -->
+			<result name="login">/WEB-INF/content/login.jsp</result>
+		</global-results>
+
+		<!-- 定义全局异常映射 -->
+		<global-exception-mappings>
+			<!-- 当Action中遇到Exception异常时，系统将转入name为root的结果中 -->
+			<exception-mapping exception="java.lang.Exception"
+				result="root" />
+		</global-exception-mappings>
+	</package>
+
+	<!-- 配置jjs包 -->
+	<package name="jjs" extends="default">
+		<!-- 定义处理登录系统的的Action -->
+		<action name="loginAction" class="cdc.jjs.control.action.LoginAction">
+			<!-- 配置拦截器 -->
+			<interceptor-ref name="defaultStack"/>
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/welcome.jsp</result>
+			<result name="input">/WEB-INF/content/login.jsp</result>
+			<result name="regist">/WEB-INF/content/login.jsp</result>
+			<!-- 配置允许处理方法 -->
+			<allowed-methods>regist</allowed-methods>
+		</action>		
+		
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>	
+	</package>
+	
+</struts>

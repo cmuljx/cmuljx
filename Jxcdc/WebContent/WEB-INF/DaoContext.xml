@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 定义数据源Bean，使用C3P0数据源实现 -->
+	<!-- 并设置连接数据库的驱动、URL、用户名、密码， 连接池最大连接数、最小连接数、初始连接数等参数 -->
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://localhost:3306/ljx?useSSL=true"
+		p:user="root" p:password="mysql16255978" p:maxPoolSize="200"
+		p:minPoolSize="2" p:initialPoolSize="2" p:maxIdleTime="20" />
+
+	<!-- 定义Hibernate的SessionFactory，并依赖注入数据源，注入上面定义的dataSource -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSource">
+		<!-- annotatedClasses属性用于列出全部持久化类 -->
+		<property name="annotatedClasses">
+			<list>
+				<!-- 以下用来列出Hibernate的持久化类 -->
+				<value>cdc.jjs.model.domain.User</value>
+				<value>cdc.jjs.model.domain.RabiseData</value>
+				<value>cdc.jjs.model.domain.RabiseResult</value>
+				<value>cdc.jjs.model.domain.InfData</value>
+				<value>cdc.jjs.model.domain.InfNuclein</value>
+				<value>cdc.jjs.model.domain.InfSeparation</value>
+				<value>cdc.jjs.model.domain.InfCell</value>
+				<value>cdc.jjs.model.domain.InfEgg</value>
+			</list>
+		</property>
+		<!-- 定义Hibernate的SessionFactory的属性 -->
+		<property name="hibernateProperties">
+			<!-- 指定数据库方言、是否自动建表、是否生成SQL语句等 -->
+			<value>
+				hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+				hibernate.hbm2ddl.auto=update
+				hibernate.show_sql=true
+				hibernate.format_sql=true
+				hibernate.use_sql_comments=true 
+			</value>
+		</property>
+	</bean>
+
+	<!-- 配置DAO组件 -->
+	<bean id="userDao" 
+		class="cdc.jjs.model.dao.impl.UserDaoHibernate"
+		p:sessionFactory-ref="sessionFactory" />
+	<bean id="rabiseDataDao"
+		class="cdc.jjs.model.dao.impl.RabiseDataDaoHibernate"
+		p:sessionFactory-ref="sessionFactory" />
+	<bean id="rabiseResultDao"
+		class="cdc.jjs.model.dao.impl.RabiseResultDaoHibernate"
+		p:sessionFactory-ref="sessionFactory" />
+	<bean id="infCellDao"
+		class="cdc.jjs.model.dao.impl.InfCellDaoHibernate"
+		p:sessionFactory-ref="sessionFactory" />
+	<bean id="infDataDao"
+		class="cdc.jjs.model.dao.impl.InfDataDaoHibernate"
+		p:sessionFactory-ref="sessionFactory" />
+	<bean id="infEggDao"
+		class="cdc.jjs.model.dao.impl.InfEggDaoHibernate"
+		p:sessionFactory-ref="sessionFactory" />
+	<bean id="infNucleinDao"
+		class="cdc.jjs.model.dao.impl.InfNucleinDaoHibernate"
+		p:sessionFactory-ref="sessionFactory" />
+	<bean id="infSeparationDao"
+		class="cdc.jjs.model.dao.impl.InfSeparationDaoHibernate"
+		p:sessionFactory-ref="sessionFactory" />
+		
+
+</beans>

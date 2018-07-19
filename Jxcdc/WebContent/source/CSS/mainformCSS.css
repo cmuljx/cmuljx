@@ -1,0 +1,58 @@
+@charset "UTF-8";
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+}
+#main{
+	height: 100%;
+}
+#top{
+	height: 91px;
+	background-image: url("/Jxcdc/source/images/bg.jpg");
+	background-repeat: repeat-x;
+}
+#bottom{
+	height: 90%;	
+	margin-top: 10px;
+}
+#left {
+	float: left;
+       width: 200px;
+       height: 100%;
+       background-color: white;
+     }
+#right {
+       margin-left: 210px;
+       height: 100%;
+     }
+#content{
+	background-color: rgb(228,238,248);
+	position: relative;
+	height: 95%;
+	width: 95%;
+	top: 2.5%;
+	left: 2.5%;
+	
+}
+#list{
+	border: 1px solid black;
+	width: 200px;
+	height: 100%;
+	background-color: rgb(245,253,165);
+}
+#title1{
+	height: 25px;
+	border-width: 4px;
+	border-style: solid;
+	border-color: #ccc #ccc #444 #444; 
+	background-color: white;
+	line-height: 25px;
+	font-size: 14pt;
+}
+li{
+	margin-top: 10px;
+	font-size: 12pt;
+	font-weight: bold;
+}

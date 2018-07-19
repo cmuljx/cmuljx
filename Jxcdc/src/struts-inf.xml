@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- 流感数据库 -->
+<struts>
+	<package name="inf" extends="default" namespace="/inf">
+
+		<action name="infDemoAction"
+			class="cdc.jjs.control.inf.action.InfDemoAction">
+			<!-- 配置结果视图映射 -->
+			<result name="success">/WEB-INF/content/Inf/infDemo.jsp</result>
+		</action>
+		
+		<!-- 流感数据导入的Action -->
+		<action name="infDataImportAction" class="cdc.jjs.control.inf.action.InfDataImportAction">
+			<interceptor-ref name="fileUpload">
+				<param name="allowedExtensions">csv</param>
+			</interceptor-ref>
+			<interceptor-ref name="loginStack"/>
+			<param name="savePath">D:/lib/upload</param>
+			<!-- 配置结果视图映射 -->
+			<result name="input">/WEB-INF/content/Inf/infDataImport.jsp</result>
+			<result name="success">/WEB-INF/content/Inf/infDataImportSuccess.jsp</result>
+		</action>
+		
+		<!-- 流感病例姓名更新的Action -->
+		<action name="infDataNameUpdateAction" class="cdc.jjs.control.inf.action.InfDataNameUpdateAction">
+			<!-- 配置结果视图映射 -->
+			<result type="json" name="success">
+			</result>
+			<allowed-methods>pre,next</allowed-methods>
+		</action>
+		
+		<!-- 流感报告生成的Action -->
+		<action name="infReportAction" class="cdc.jjs.control.inf.action.InfReportAction">
+			<!-- 配置结果视图映射 -->
+			<result type="jasper" name="nuclein12">
+				<param name="location">/source/jasperreports/infNucleinReport12.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">field</param>
+				<param name="reportParameters">paremeter</param>
+			</result>
+			<result type="jasper" name="nuclein26">
+				<param name="location">/source/jasperreports/infNucleinReport26.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">field</param>
+				<param name="reportParameters">paremeter</param>
+			</result>
+			<result type="jasper" name="separation12">
+				<param name="location">/source/jasperreports/infSeparationReport12.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">field</param>
+				<param name="reportParameters">paremeter</param>
+			</result>
+			<result type="jasper" name="separation26">
+				<param name="location">/source/jasperreports/infSeparationReport26.jasper</param>
+				<param name="format">PDF</param>
+				<param name="dataSource">field</param>
+				<param name="reportParameters">paremeter</param>
+			</result>
+			<result name="other">
+				
+			</result>
+			<result type="json" name="success">
+				
+			</result>
+			<allowed-methods>collectionDateFind</allowed-methods>
+		</action>
+		
+		<!-- 流感核酸检测数据统计的Action -->
+		<action name="infNucleinAnalysisAction"
+			class="cdc.jjs.control.inf.action.InfNucleinAnalysisAction">
+			<!-- 配置结果视图映射 -->
+			<result type="json" name="success">
+				<param name="includePropreties">listWeek。*,listCompany。*</param>
+			</result>
+		</action>
+		
+		<!-- 流感细胞分离检测数据统计的Action -->
+		<action name="infSeparationAnalysisAction"
+			class="cdc.jjs.control.inf.action.InfSeparationAnalysisAction">
+			<!-- 配置结果视图映射 -->
+			<result type="json" name="success">
+				<param name="includePropreties">listWeek。*,listCompany。*</param>
+			</result>
+		</action>
+
+		<action name="*">
+			<result>/WEB-INF/content/Inf/{1}.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

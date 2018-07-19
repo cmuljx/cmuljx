@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+form{
+	height: 100%;
+	width: 100%
+}
+caption{
+	font-size: 18pt;
+	height: 40px;
+	border-width: 4px;
+	border-style: solid;
+	border-color: #ccc #ccc #444 #444; 
+	background-color: silver;
+	line-height: 40px;
+}
+tr{
+	height: 35px;
+}
+.td1{
+	width: 200px;
+	text-align: right;
+}	
+.td2{
+	width: 300px;
+	height: 35px;
+   	line-height: 30px;
+   	margin: 10px;
+}
+.td3{
+	width: 100px;
+	text-align: right;
+}
+.td4{
+	width: 300px;
+	height: 35px;
+   	line-height: 30px;
+   	margin: 10px
+}
+.item{
+    height: 20px;
+    line-height: 20px;
+    margin: 10px;
+	}
+.item .item-label{
+    float: left;
+    width: 80px;
+    text-align: right;
+}
+.item-text{
+    float: left;
+    width: 140px;
+    height: 10px;
+    padding: 6px 10px 6px 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+.item-select{
+    float: left;
+    height: 26px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.item-file{
+    float: left;
+    height: 30px;
+    margin-left: 10px;
+    font-size: 14px;
+    padding: 6px 0px;
+}
+.item-submit{
+    float: left;
+    height: 30px;
+    width: 60px;
+    font-size: 14px;
+}
+input.error{
+   border: 1px solid #E6594E;
+}
+input.highlight{
+    border: 1px solid #7abd54;
+}
+label.error{
+    float: left;
+    height: 12px;
+    line-height: 20px;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 5px;
+    padding-left: 5px;
+    color: red;
+}
+label.tip{
+    float: left;
+    height: 12px;
+    line-height: 20px;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 5px;
+    padding-left: 5px;
+    color: #aaa;
+}
