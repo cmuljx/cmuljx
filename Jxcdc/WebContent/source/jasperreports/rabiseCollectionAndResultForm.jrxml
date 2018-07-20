@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rabiseCollectionAndResultForm" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d4cf5ff6-0ae5-4c51-b08d-09cf94383bdc">
 	<property name="ireport.zoom" value="1.3310000000000004"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<style name="content" fill="Solid" hAlign="Center" vAlign="Middle" fontName="宋体" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true">
+	<style name="content" fill="Solid" hTextAlign="Center" hImageAlign="Center" vTextAlign="Middle" vImageAlign="Middle" fontName="宋体" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true">
 		<box>
 			<pen lineWidth="0.5"/>
 			<topPen lineWidth="0.5"/>
@@ -12,7 +13,7 @@
 			<rightPen lineWidth="0.5"/>
 		</box>
 	</style>
-	<style name="header" hAlign="Center" vAlign="Middle" fontName="宋体" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true">
+	<style name="header" hTextAlign="Center" hImageAlign="Center" vTextAlign="Middle" vImageAlign="Middle" fontName="宋体" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true">
 		<box>
 			<pen lineWidth="0.5"/>
 			<topPen lineWidth="0.5"/>
@@ -45,7 +46,7 @@
 			<staticText>
 				<reportElement style="title" x="86" y="0" width="618" height="52" uuid="ec3fa335-6560-44d2-93a2-75be139e11b6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="36" isBold="true"/>
+					<font fontName="simsun" size="36" isBold="true"/>
 				</textElement>
 				<text><![CDATA[2017年疑似狂犬病人标本送检登记表]]></text>
 			</staticText>
@@ -55,62 +56,107 @@
 		<band height="53" splitType="Stretch">
 			<staticText>
 				<reportElement style="header" x="0" y="0" width="57" height="53" uuid="ebf74390-b71a-48d7-9e8a-96ded5eb0c0b"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[编号]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="57" y="0" width="53" height="53" uuid="ff341153-aa63-4ea1-b17e-5903dc9e74fb"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[姓名]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="110" y="0" width="19" height="53" uuid="982950e3-7d93-46b0-b292-c90f75afae2e"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[性别]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="129" y="0" width="31" height="53" uuid="d3c723ad-edd7-4ce3-a72d-caf6a168ca5e"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[年龄]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="160" y="0" width="36" height="53" uuid="4ee9f3b3-302c-4462-9c42-12c8a1ca0404"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[职业]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="196" y="0" width="136" height="53" uuid="bdfd38db-fecd-4c24-be2c-c0155f7c6468"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[家庭住址]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="332" y="0" width="60" height="53" uuid="ae7e9c11-f21f-43ae-bc4b-20a09f93be18"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[发病日期]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="392" y="0" width="60" height="53" uuid="2ff1d7bf-8ee8-4915-8619-01b30ece02cc"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[采样日期]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="452" y="0" width="67" height="53" uuid="709afb72-ab6b-4f82-a666-860c29e07f3b"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[采样单位]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="519" y="0" width="55" height="53" uuid="162b7b36-7ae8-4029-a1a2-ca36dc33e214"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[标本种类]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="574" y="0" width="28" height="53" uuid="75f136ac-7cbe-4f44-bc62-0c5f04623282"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[标本数量]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="602" y="0" width="42" height="53" uuid="3f93525e-4999-448f-9e1c-c282ee464d33"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[送样人]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="644" y="0" width="43" height="53" uuid="8c220c5e-5d27-4828-b192-92b6ac682293"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[收样人]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="687" y="0" width="60" height="53" uuid="4e39eec5-4d09-4323-bc27-cfba4fa44234"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[收样日期]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="header" x="747" y="0" width="54" height="53" uuid="2d65f8c3-e257-4aea-aa17-d7f015f3450e"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<text><![CDATA[RT-PCR
 结果]]></text>
 			</staticText>
@@ -120,62 +166,107 @@
 		<band height="388" splitType="Stretch">
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="0" y="0" width="57" height="45" uuid="045a60a0-1084-40bc-b9b2-c26885194cac"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{laboratoryNumber}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="110" y="0" width="19" height="45" uuid="2e6e6e69-ddbc-4e4f-a9fc-36182e14c0e0"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{sex}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="129" y="0" width="31" height="45" uuid="dccfb6ad-66c1-4d07-8d57-43a805a26ff7"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="160" y="0" width="36" height="45" uuid="f389ca94-db6f-4ab5-869f-a816178e8076"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{profession}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="57" y="0" width="53" height="45" uuid="51372e49-bae2-441e-850f-790d332569a3"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="196" y="0" width="136" height="45" uuid="b0d0fb77-6369-4574-9211-e0b2c710b342"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="574" y="0" width="28" height="45" uuid="f6201141-a0e9-41c2-9d66-d2ed93a34d3e"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{specimeAmount}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="602" y="0" width="42" height="45" uuid="879a5876-f58f-46bc-b4f9-d5058cbafb13"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{deliveryPerson}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="644" y="0" width="43" height="45" uuid="9bb0ba7a-7b82-4507-ae3f-f75f878fc515"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{collectionPerson}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="452" y="0" width="67" height="45" uuid="965349df-ca6b-4826-9c8b-41619f3edfcd"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{samplingCompany}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="687" y="0" width="60" height="45" uuid="3b6001e1-8426-445a-a3df-fc95abbf25e7"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{collectionDate}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="332" y="0" width="60" height="45" uuid="8fa2446a-6e64-4238-812e-08c7624be253"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{accidentDate}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="519" y="0" width="55" height="45" uuid="5684b871-79df-4bd8-b0c0-91ac5f858962"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="392" y="0" width="60" height="45" uuid="c153c269-eae3-4774-9e76-8808629433f3"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{samplingDate}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="content" x="747" y="0" width="54" height="45" uuid="98b8fafd-8225-48c5-b2ab-c21aecc72458"/>
+				<textElement>
+					<font fontName="simsun"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
 			</textField>
 		</band>

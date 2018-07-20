@@ -129,7 +129,7 @@
 				<tr>
 					<td class="td1">检测者：</td>
 					<td  class="td2">
-						<input id="detector" type="text" name="detector" value="李健雄       肖  芳"/>
+						<input id="detector" type="text" name="detector" value="李健雄  肖  芳"/>
 					</td>
 				</tr>			
 			</table>
