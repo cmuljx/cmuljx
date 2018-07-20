@@ -20,7 +20,7 @@
 				<param name="allowedExtensions">csv</param>
 			</interceptor-ref>
 			<interceptor-ref name="loginStack"/>
-			<param name="savePath">D:/lib/upload</param>
+			<param name="savePath">D:/software/Java/upload</param>
 			<!-- 配置结果视图映射 -->
 			<result name="input">/WEB-INF/content/Inf/infDataImport.jsp</result>
 			<result name="success">/WEB-INF/content/Inf/infDataImportSuccess.jsp</result>

@@ -20,7 +20,7 @@ public class InfCellDaoHibernate extends BaseDaoHibernate<InfCell> implements In
 				" inf_separation.harvest_date = inf.harvest_date, " + 
 				" inf_separation.blood_cell_type = inf.blood_cell_type, " + 
 				" inf_separation.titer_HA = inf.titer_HA, " + 
-				" inf_separation.identification_result = inf.identification_result, " + 
+				" inf_separation.identification_result = case inf.identification_result when '' then 'вѕад' else inf.identification_result end, " + 
 				" inf_separation.strain_name = inf.strain_name, " + 
 				" inf_separation.identification_date = inf.identification_date, " + 
 				" inf_separation.separation_company = inf.separation_company, " + 
@@ -48,7 +48,8 @@ public class InfCellDaoHibernate extends BaseDaoHibernate<InfCell> implements In
 				" identify_result_province, identify_date_province, separation_method ) " + 
 				" SELECT " + 
 				" inf.passage_history_cell, inf.inf_id, inf.inoculation_date, inf.harvest_date, inf.blood_cell_type, inf.titer_HA, " + 
-				" inf.identification_result, inf.strain_name, inf.identification_date, inf.separation_company, " + 
+				" case inf.identification_result when '' then 'вѕад' else inf.identification_result end, " + 
+				" inf.strain_name, inf.identification_date, inf.separation_company, " + 
 				" inf.inspection_date_cnic, inf.received_date_cnic, inf.identify_method_cnic, inf.identify_result_cnic, inf.identify_date_cnic, " + 
 				" inf.inspection_date_province, inf.received_date_province, inf.identify_method_province, " + 
 				" inf.identify_result_province, inf.identify_date_province,'C' " + 
