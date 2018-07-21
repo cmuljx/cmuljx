@@ -55,7 +55,7 @@
 		<div id="mid">
 			<div id="welcomeMid">欢迎您使用</div>
 			<div id="returnMid">
-				<a id="returnA" href="welcomeAction">返回</a>	
+				<a id="returnA" href="welcome.action">返回</a>	
 			</div>					
 		</div>
 		<div id="bottom">

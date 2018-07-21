@@ -87,7 +87,7 @@
 				<param name="includePropreties">listWeek。*,listCompany。*</param>
 			</result>
 		</action>
-
+		
 		<action name="*">
 			<result>/WEB-INF/content/Inf/{1}.jsp</result>
 		</action>

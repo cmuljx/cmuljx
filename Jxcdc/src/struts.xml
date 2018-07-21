@@ -67,13 +67,15 @@
 			<result name="regist">/WEB-INF/content/login.jsp</result>
 			<!-- 配置允许处理方法 -->
 			<allowed-methods>regist</allowed-methods>
+		</action>		
+		
+		<action name="rabiseMain">
+			<result>/WEB-INF/content/Rabise/rabiseMain.jsp</result>
 		</action>
 		
-		<action name="welcomeAction">
-			<!-- 配置结果视图映射 -->
-			<result name="success">/WEB-INF/content/welcome.jsp</result>
+		<action name="infMain">
+			<result>/WEB-INF/content/Inf/infMain.jsp</result>
 		</action>
-				
 		
 		<action name="*">
 			<result>/WEB-INF/content/{1}.jsp</result>

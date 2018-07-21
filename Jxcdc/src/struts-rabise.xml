@@ -100,8 +100,7 @@
 				<param name="inputName">excelFile</param>
 			</result>
 		</action>
-
-
+		
 		<action name="*">
 			<result>/WEB-INF/content/Rabise/{1}.jsp</result>
 		</action>

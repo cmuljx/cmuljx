@@ -15,7 +15,12 @@
 <script type="text/javascript" src="/Jxcdc/source/js/jquery-ui.min.js"></script>
 
 <script type="text/javascript">
-	
+	$("#rabise").click(function(){
+		
+		
+		
+		
+	});
 </script>
 
 <style type="text/css">
@@ -38,22 +43,22 @@
 			<div class="list" style="width: 100%;">
 				<ul>
 					<li class="img">
-						<a href="rabise/rabiseMain"> 
+						<a href="rabiseMain.action"> 
 							<img src="source/images/rabise.png" width="200" height="200" />
 						</a>
 					</li>
 					<li class="t">
-						<a href="rabise/rabiseMain">狂      犬</a>
+						<a href="rabiseMain.action">狂      犬</a>
 					</li>
 				</ul>
 				<ul>
 					<li class="img">
-						<a href="inf/infMain"> 
+						<a href="infMain.action"> 
 							<img src="source/images/inf.png" width="200" height="200" />
 						</a>
 					</li>
 					<li class="t">
-						<a href="inf/infMain">流      感</a>
+						<a href="infMain.action">流      感</a>
 					</li>
 				</ul>
 			</div>
